@@ -5,6 +5,8 @@ const Images = {
   ICSetting: require('./icon/setting.png'),
   ICRightArrow: require('./icon/right-arrow.png'),
   ICPlus: require('./icon/plus.png'),
+  ICClose: require('./icon/cancel.png'),
 };
+
 
 export default Images;

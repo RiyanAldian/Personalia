@@ -14,17 +14,16 @@ import {
   Pressable,
   Button,
 } from 'react-native';
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import React, { useState } from 'react';
 import { Label } from 'react-native-form-component';
+import Images from '../../assets';
+import component, { Biodata } from '../../components';
 
 
 
 const Dashboard = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
-
-    
     <SafeAreaView style={styles.page}>
       <Modal
         animationType="slide"
@@ -37,18 +36,18 @@ const Dashboard = () => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
+            <Text style={styles.modalTitle}>Detail Hari Kerja</Text>
             <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
+                style={ styles.buttonClose}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Image source={Images.ICClose}/>
+              </Pressable>
+            <Text style={styles.modalText}>Tanggal efeosomesv  fewe fef wefew f fe fw f effe frfe f</Text>
           </View>
         </View>
       </Modal>
       <ScrollView style={styles.scrollView}>
-      
       <View style={styles.blue} />
       <View style={styles.container}>
         <View style={styles.title}>
@@ -62,33 +61,7 @@ const Dashboard = () => {
           <Text style={styles.sublabel}>2022020001</Text>
         </View>
       </View>
-      <View style={styles.container}>
-        <View style={styles.title}>
-          <Text style={styles.label}>Biodata</Text>
-          <View style={styles.detail}>
-            <View style={styles.ket}>
-              <Text style={styles.ket}>KTP</Text>
-              <Text style={styles.ket}>BPJS</Text>
-              <Text style={styles.ket}>JHT</Text>
-              <Text style={styles.ket}>Alamat</Text>
-              <Text style={styles.ket}>Tanggal Masuk</Text>
-              <Text style={styles.ket}>Bagian</Text>
-              <Text style={styles.ket}>Status</Text>
-              <Text style={styles.ket}>Dept</Text>
-            </View>
-            <View style={styles.ket}>
-              <Text style={styles.ket}>3311071006990004</Text>
-              <Text style={styles.ket}>0002167007804</Text>
-              <Text style={styles.ket}>22020956482</Text>
-              <Text style={styles.ket}>Dk Dari Rt 002 Rw 004 Rejosari</Text>
-              <Text style={styles.ket}>02 Feb 2022</Text>
-              <Text style={styles.ket}>Office</Text>
-              <Text style={styles.ket}>Junior Staff</Text>
-              <Text style={styles.ket}>IT</Text>
-            </View>
-          </View>
-        </View>
-      </View>
+     <Biodata/>
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.label}>Cuti</Text>
@@ -194,12 +167,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 22
+    marginTop: 22,
   },
   modalView: {
-    margin: 20,
+    margin: 10,
     backgroundColor: 'white',
-    borderRadius: 20,
+    borderRadius: 10,
     padding: 35,
     alignItems: 'center',
     shadowColor: '#000',
@@ -220,7 +193,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#2196F3',
   },
   buttonClose: {
-    backgroundColor: '#2196F3',
+    backgroundColor: 'white',
+    position:'absolute',
+    alignSelf:'flex-end',
+    padding:6,
   },
   textStyle: {
     color: 'white',
@@ -230,5 +206,10 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: 'center',
+  },
+  modalTitle:{
+    position:'absolute',
+    alignSelf:'flex-start',
+    padding:12,
   }
 });

@@ -47,14 +47,14 @@ const BottomNavigator = ({state, descriptors, navigation}) => {
             );
           }
 
-          if (label === 'Setting') {
+          if (label === 'Presensi') {
             return isFocused ? (
               <Image
-                source={Images.ICSetting}
+                source={Images.ICPlus}
                 style={[styles.active, styles.image]}
               />
             ) : (
-              <Image source={Images.ICSetting} style={styles.image} />
+              <Image source={Images.ICPlus} style={styles.image} />
             );
           }
         };

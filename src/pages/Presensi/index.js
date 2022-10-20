@@ -9,7 +9,7 @@ const Presensi = () => {
     <View style={styles.blue} />
     <View style={styles.container}>
       <View style={styles.title}>
-        <Text style={styles.label} />
+        <Text>Presensi</Text>
       </View>
     </View>
     </ScrollView>
