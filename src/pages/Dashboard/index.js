@@ -18,6 +18,7 @@ import React, { useState } from 'react';
 import { Label } from 'react-native-form-component';
 import Images from '../../assets';
 import component, { Biodata } from '../../components';
+import Today from '../../components/Today';
 
 
 
@@ -91,20 +92,7 @@ const Dashboard = () => {
           </View>
         </View>
       </View>
-      <View style={styles.container}>
-        <View style={styles.title}>
-          <Text style={styles.label}>Hari ini</Text>
-          <View style={styles.detail}>
-            <View style={styles.ket}>
-              <Text style={styles.ket}>Masuk</Text>
-              <Text style={styles.ket}>06:19</Text>
-            </View>
-            <View style={styles.ket}>
-              <Text style={styles.ket}>Pulang</Text>
-            </View>
-          </View>
-        </View>
-      </View>
+     <Today/>
       </ScrollView>
   </SafeAreaView>
   );
@@ -205,11 +193,13 @@ const styles = StyleSheet.create({
   },
   modalText: {
     marginBottom: 15,
+    color:'grey',
     textAlign: 'center',
   },
   modalTitle:{
     position:'absolute',
     alignSelf:'flex-start',
     padding:12,
-  }
+    color:'grey',
+  },
 });

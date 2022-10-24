@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View,ScrollView} from 'react-native';
 import React,{ Component } from 'react';
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+import { Table ,TableWrapper,Col,Rows} from 'react-native-table-component';
 
 
 export class Biodata extends Component {
@@ -26,7 +26,7 @@ export class Biodata extends Component {
     return (
         <View style={styles.container}>
         <View style={styles.title}>
-          <Text style={styles.label}>Cuti</Text>
+          <Text style={styles.label}>Biodata</Text>
         <View style={styles.table}>
         <Table borderStyle={{borderWidth: 0}}>
           <TableWrapper style={styles.wrapper}>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
       wrapper: { flexDirection: 'row' },
       titletb: { flex: 1, backgroundColor: '#f6f8fa' },
     //   row: {  height: 36  },
-      text: { textAlign: 'left' },
+      text: { textAlign: 'left' ,color:'grey'},
       container:{
         marginTop:10,
         marginLeft:10,
