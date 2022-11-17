@@ -6,6 +6,7 @@ const Images = {
   ICRightArrow: require('./icon/right-arrow.png'),
   ICPlus: require('./icon/plus.png'),
   ICClose: require('./icon/cancel.png'),
+  ICMenu: require('./icon/icon-menu.png'),
 };
 
 

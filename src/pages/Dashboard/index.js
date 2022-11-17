@@ -19,14 +19,18 @@ import Images from '../../assets';
 import component, { Biodata, Cuti } from '../../components';
 import Today from '../../components/Today';
 
-
-
 const Dashboard = () => {
+  const name = 'Riyan Aldiansyah';
+  const nik = '2022020001';
+
   return (
     <SafeAreaView style={styles.page}>
       <ScrollView style={styles.scrollView}>
         <View style={styles.blue}>
-          <Text style={styles.userName}>Hi, Riyan Aldiansyah</Text>
+          {/* <TouchableOpacity>
+            <Image source={Images.ICMenu} style={styles.menu}/>
+          </TouchableOpacity>
+          <Text style={styles.userName}>Hi, {name} </Text> */}
         </View>
         <View style={styles.container}>
           <View style={styles.title}>
@@ -36,8 +40,8 @@ const Dashboard = () => {
         <View style={styles.container}>
           <View style={styles.title}>
             <Text style={styles.label}>User</Text>
-            <Text style={styles.sublabel}>Riyan Aldiansyah</Text>
-            <Text style={styles.sublabel}>2022020001</Text>
+            <Text style={styles.sublabel}>{name}</Text>
+            <Text style={styles.sublabel}>{nik}</Text>
           </View>
         </View>
         <Biodata/>
@@ -53,7 +57,7 @@ export default Dashboard;
 const styles = StyleSheet.create({
   page:{
     color:'#f3efed',
-    paddingBottom:10,
+    // paddingBottom:10,
   },
   blue:{
     backgroundColor:'#0087ff',
@@ -80,7 +84,7 @@ const styles = StyleSheet.create({
     alignSelf:'flex-end',
     fontSize:14,
     padding:20,
-    color:'white'
+    color:'white',
   },
   sublabel:{
     color:'grey',
@@ -106,5 +110,9 @@ const styles = StyleSheet.create({
   },
   btn:{
     paddingTop:10,
+  },
+  menu:{
+    position:'absolute',
+    margin:16,
   },
 });

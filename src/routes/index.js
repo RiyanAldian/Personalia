@@ -5,9 +5,34 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { Login,Dashboard,Presensi } from '../pages';
 import {BottomNavigator} from '../components';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View, Text } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+
+
+function MyDrawer() {
+  return (
+    <Drawer.Navigator useLegacyImplementation
+    screenOptions={{
+      drawerStyle: {
+        backgroundColor: '#fff',
+        width: 240,
+      },
+      headerTintColor: 'white',
+      headerStyle: {
+        height: 50, // Specify the height of your custom header
+        backgroundColor:'#0087ff',
+        shadowColor:'#0087ff',
+      },
+    }}>
+      <Drawer.Screen name="Dashboard" component={MainApp} options={{ drawerLabel: 'Home' }}/>
+      <Drawer.Screen name="Article" component={Presensi} />
+    </Drawer.Navigator>
+  );
+}
 
 function MainApp() {
   return (
@@ -34,7 +59,7 @@ const Routes = () => {
         }}>
         <Stack.Screen name="Login" component={Login}
          options={{ headerShown: false }}/>
-        <Stack.Screen name="MainApp" component={MainApp}
+        <Stack.Screen name="MainApp" component={MyDrawer}
           options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
