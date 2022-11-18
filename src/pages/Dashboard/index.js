@@ -24,7 +24,7 @@ const Dashboard = () => {
   const nik = '2022020001';
 
   return (
-    <SafeAreaView style={styles.page}>
+    // <SafeAreaView style={styles.page}>
       <ScrollView style={styles.scrollView}>
         <View style={styles.blue}>
           {/* <TouchableOpacity>
@@ -32,11 +32,7 @@ const Dashboard = () => {
           </TouchableOpacity>
           <Text style={styles.userName}>Hi, {name} </Text> */}
         </View>
-        <View style={styles.container}>
-          <View style={styles.title}>
-            <Text style={styles.label}>Profile Karyawan</Text>
-          </View>
-        </View>
+       
         <View style={styles.container}>
           <View style={styles.title}>
             <Text style={styles.label}>User</Text>
@@ -48,7 +44,7 @@ const Dashboard = () => {
         <Cuti/>
         <Today/>
       </ScrollView>
-  </SafeAreaView>
+  // </SafeAreaView>
   );
 };
 
@@ -57,11 +53,11 @@ export default Dashboard;
 const styles = StyleSheet.create({
   page:{
     color:'#f3efed',
-    // paddingBottom:10,
+    paddingBottom:0,
   },
   blue:{
     backgroundColor:'#0087ff',
-    height:80,
+    height:20,
     position:'absolute',
     top: 0,
     bottom: 0,
