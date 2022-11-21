@@ -5,18 +5,30 @@ import { Table ,TableWrapper,Col,Rows} from 'react-native-table-component';
 
 
 export class Biodata extends Component {
+
     constructor(props) {
+        const bio = {
+          'KTP' : '3311071006990004',
+          'BPJS' : '0002167007804',
+          'JHT' : '22020956482',
+          'Alamat' : 'Dk Dari Rt 002 Rw 004 Rejosari Polokarto Sukoharjo 087736026',
+          'Tanggal_in' : '02 Feb 2022',
+          'Bagian' : 'Office',
+          'Status' : 'Junior Staff',
+          'Dept' : 'IT',
+        };
+        // console.log(bio);
         super(props);
         this.state = {
           tableData: [
-            ['KTP', '3311071006990004'],
-            ['BPJS', '0002167007804'],
-            ['JHT', '22020956482'],
-            ['Alamat', 'Dk Dari Rt 002 Rw 004 Rejosari Polokarto Sukoharjo 087736026'],
-            ['Tanggal Masuk', '02 Feb 2022'],
-            ['Bagian', 'Office'],
-            ['Status', 'Junior Staff'],
-            ['Dept', 'IT'],
+            ['KTP', bio.KTP],
+            ['BPJS', bio.BPJS],
+            ['JHT', bio.JHT],
+            ['Alamat', bio.Alamat],
+            ['Tanggal Masuk', bio.Tanggal_in ],
+            ['Bagian', bio.Bagian],
+            ['Status', bio.Status],
+            ['Dept', bio.Dept],
           ],
         };
       }
@@ -28,7 +40,6 @@ export class Biodata extends Component {
             <View style={styles.title}>
             <Text style={styles.label}>Biodata</Text>
             <View style={styles.breakLine} />
-
                 <View style={styles.table}>
                 <Table borderStyle={{borderWidth: 0}}>
                 <TableWrapper style={styles.wrapper}>

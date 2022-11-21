@@ -20,14 +20,16 @@ import component, { Biodata, Cuti } from '../../components';
 import Today from '../../components/Today';
 
 const Dashboard = () => {
-  const name = 'Riyan Aldiansyah';
-  const nik = '2022020001';
-
+  const Profile = {
+    'nama' : 'Riyan Aldiansyah',
+    'nik' : '2022020001',
+  };
+  console.log(Profile);
   return (
     <SafeAreaView style={styles.page}>
       <ScrollView style={styles.scrollView}>
         <View style={styles.blue}>
-          <Text style={styles.userName}>Hi, {name} </Text>
+          <Text style={styles.userName}>Hi, {Profile.nama} </Text>
         </View>
         <View style={styles.container1}>
           <View style={styles.title}>
@@ -37,8 +39,8 @@ const Dashboard = () => {
         <View style={styles.container}>
           <View style={styles.title}>
             <Text style={styles.label}>User</Text>
-            <Text style={styles.sublabel}>{name}</Text>
-            <Text style={styles.sublabel}>{nik}</Text>
+            <Text style={styles.sublabel}>{Profile.nama}</Text>
+            <Text style={styles.sublabel}>{Profile.nik}</Text>
           </View>
         </View>
         <Biodata/>
