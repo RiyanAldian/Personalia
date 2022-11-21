@@ -17,14 +17,14 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import Logo from '../../assets/logo/logo.png';
+import Images from '../../assets';
 
 const CustomSidebarMenu = props => {
   return (
     <SafeAreaView style={{flex: 1}}>
       {/*Top Large Image */}
       <Image
-        source={Logo}
+        source={Images.Logo}
         style={styles.sideMenuProfileIcon}
       />
       <DrawerContentScrollView {...props}>
