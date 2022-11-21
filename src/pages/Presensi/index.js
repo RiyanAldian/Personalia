@@ -20,39 +20,51 @@ import component, { Biodata, Cuti } from '../../components';
 import Today from '../../components/Today';
 
 const Presensi = () => {
+  const Profile = {
+    'nama' : 'Riyan Aldiansyah',
+    'nik' : '2022020001',
+  };
   return (
     <SafeAreaView style={styles.page}>
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.blue}>
-          <Text style={styles.userName}>Hi, Riyan Aldiansyah</Text>
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.blue}>
+        <Text style={styles.userName}>Hi, {Profile.nama} </Text>
+      </View>
+      <View style={styles.circ}/>
+      <View style={styles.container1}>
+        <View style={styles.title}>
+          <Text style={styles.label}>Presensi</Text>
         </View>
-        <View style={styles.container}>
-          <View style={styles.title}>
-            <Text style={styles.label}>Profile Karyawan</Text>
-          </View>
+      </View>
+      <View style={styles.container}>
+        <View style={styles.title}>
+          <Text style={styles.label}>s</Text>
+          <Text style={styles.sublabel}>{Profile.nama}</Text>
+          <Text style={styles.sublabel}>{Profile.nik}</Text>
         </View>
-        <View style={styles.container1}>
-          <View style={styles.title}>
-            <Text style={styles.label}>Presensi Karyawan</Text>
-            <Text style={styles.sublabel}>Bulan</Text>
-            <Text style={styles.sublabel}>2022020001</Text>
-          </View>
-        </View>
-      </ScrollView>
-  </SafeAreaView>
+      </View>
+    </ScrollView>
+</SafeAreaView>
   );
 };
 
 export default Presensi;
-
 const styles = StyleSheet.create({
   page:{
     color:'#f3efed',
-    paddingBottom:10,
+  },
+  circ:{
+    backgroundColor:'#f3efed',
+    width:'170%',
+    position:'absolute',
+    alignSelf:'center',
+    height:500,
+    top:40,
+    borderRadius:250,
   },
   blue:{
     backgroundColor:'#0087ff',
-    height:70,
+    height:100,
     position:'absolute',
     top: 0,
     bottom: 0,
@@ -65,11 +77,9 @@ const styles = StyleSheet.create({
     marginRight:10,
   },
   container1:{
-    marginTop:5,
     marginLeft:10,
     marginRight:10,
-    marginBottom:10,
-    paddingBottom:20,
+    marginTop:0,
   },
   title:{
     position:'relative',

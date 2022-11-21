@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import { StyleSheet,
     Text,
@@ -12,61 +13,6 @@ import React, { useState,Component } from 'react';
 import Images from '../../assets';
 import { Table ,TableWrapper,Col,Rows} from 'react-native-table-component';
 
-// const Cuti = () => {
-//   const [modalVisible, setModalVisible] = useState(false);
-//   return (
-//     <View style={styles.container}>
-//       <Modal
-//         animationType="slide"
-//         transparent={true}
-//         visible={modalVisible}
-//         onRequestClose={() => {
-//           Alert.alert("Modal has been closed.");
-//           setModalVisible(!modalVisible);
-//         }}
-//       >
-//         <View style={styles.centeredView}>
-//           <View style={styles.modalView}>
-//             <Text style={styles.modalTitle}>Detail Hari Kerja</Text>
-//             <Pressable
-//                 style={ styles.buttonClose}
-//                 onPress={() => setModalVisible(!modalVisible)} >
-//                 <Image source={Images.ICClose}/>
-//               </Pressable>
-//             <Text style={styles.modalText}>Tanggal efeosomesv  fewe fef wefew f fe fw f effe frfe f</Text>
-//           </View>
-//         </View>
-//       </Modal>
-//       <View style={styles.title}>
-//         <Text style={styles.label}>Cuti</Text>
-//         <View style={styles.breakLine} />
-//         <View style={styles.detail}>
-//           <View style={styles.ket}>
-//             <Text style={styles.ket}>Masa Kerja</Text>
-//             <Text style={styles.ket}>Jumlah Cuti</Text>
-//             <Text style={styles.ket}>Jumlah Pakai Cuti</Text>
-//             <Text style={styles.ket}>Jumlah Cuti Diuangkan</Text>
-//             <Text style={styles.ket}>Sisa Cuti</Text>
-//           </View>
-//           <View style={styles.ket}>
-//             <Text style={styles.ket}>8 bulan</Text>
-//             <Text style={styles.ket}>0 hari</Text>
-//             <Text style={styles.ket}>5 hari</Text>
-//             <Text style={styles.ket}>-</Text>
-//             <Text style={styles.ket}>-5 hari</Text>
-//           </View>
-//         </View>
-//         <View style={styles.btn}>
-//           <Pressable
-//             style={[styles.button, styles.buttonOpen]}
-//             onPress={() => setModalVisible(true)}>
-//             <Text style={styles.textStyle}>Detail</Text>
-//           </Pressable>
-//         </View>
-//       </View>
-//     </View>
-//   );
-// };
 
 
 export class Cuti extends Component {

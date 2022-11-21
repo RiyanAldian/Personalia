@@ -31,6 +31,7 @@ const Dashboard = () => {
         <View style={styles.blue}>
           <Text style={styles.userName}>Hi, {Profile.nama} </Text>
         </View>
+        <View style={styles.circ}/>
         <View style={styles.container1}>
           <View style={styles.title}>
             <Text style={styles.label}>Profile Karyawan</Text>
@@ -57,9 +58,18 @@ const styles = StyleSheet.create({
   page:{
     color:'#f3efed',
   },
+  circ:{
+    backgroundColor:'#f3efed',
+    width:'170%',
+    position:'absolute',
+    alignSelf:'center',
+    height:500,
+    top:40,
+    borderRadius:250,
+  },
   blue:{
     backgroundColor:'#0087ff',
-    height:70,
+    height:100,
     position:'absolute',
     top: 0,
     bottom: 0,
@@ -74,6 +84,7 @@ const styles = StyleSheet.create({
   container1:{
     marginLeft:10,
     marginRight:10,
+    marginTop:0,
   },
   title:{
     position:'relative',

@@ -4,9 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { Login,Dashboard,Presensi } from '../pages';
-// import {BottomNavigator} from '../components';
+import {CustomSidebarMenu} from '../components';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-// import { View, Text ,Image} from 'react-native';
+import { View, Text ,Image,TouchableOpacity} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -25,8 +25,8 @@ function MyDrawer() {
           backgroundColor:'#0087ff',
           shadowColor:'#0087ff',
         },
-      }}>
-      {/* <Image source={Images.logo} /> */}
+      }}
+      drawerContent={(props) => <CustomSidebarMenu {...props} />}>
       <Drawer.Screen name="Dashboard" component={MainApp} options={{ drawerLabel: 'Home' }}/>
       <Drawer.Screen name="Presensi" component={Presensi} />
     </Drawer.Navigator>
