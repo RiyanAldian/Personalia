@@ -72,7 +72,7 @@ export default Cuti;
 
 const styles = StyleSheet.create({
    container:{
-        marginTop:10,
+        marginTop:5,
         marginLeft:10,
         marginRight:10,
       },

@@ -24,15 +24,16 @@ const Dashboard = () => {
   const nik = '2022020001';
 
   return (
-    // <SafeAreaView style={styles.page}>
+    <SafeAreaView style={styles.page}>
       <ScrollView style={styles.scrollView}>
         <View style={styles.blue}>
-          {/* <TouchableOpacity>
-            <Image source={Images.ICMenu} style={styles.menu}/>
-          </TouchableOpacity>
-          <Text style={styles.userName}>Hi, {name} </Text> */}
+          <Text style={styles.userName}>Hi, {name} </Text>
         </View>
-       
+        <View style={styles.container1}>
+          <View style={styles.title}>
+            <Text style={styles.label}>Profile Karyawan</Text>
+          </View>
+        </View>
         <View style={styles.container}>
           <View style={styles.title}>
             <Text style={styles.label}>User</Text>
@@ -44,7 +45,7 @@ const Dashboard = () => {
         <Cuti/>
         <Today/>
       </ScrollView>
-  // </SafeAreaView>
+  </SafeAreaView>
   );
 };
 
@@ -53,11 +54,10 @@ export default Dashboard;
 const styles = StyleSheet.create({
   page:{
     color:'#f3efed',
-    paddingBottom:0,
   },
   blue:{
     backgroundColor:'#0087ff',
-    height:20,
+    height:70,
     position:'absolute',
     top: 0,
     bottom: 0,
@@ -65,7 +65,11 @@ const styles = StyleSheet.create({
     right: 0,
   },
   container:{
-    marginTop:10,
+    marginTop:5,
+    marginLeft:10,
+    marginRight:10,
+  },
+  container1:{
     marginLeft:10,
     marginRight:10,
   },
@@ -79,12 +83,11 @@ const styles = StyleSheet.create({
   userName:{
     alignSelf:'flex-end',
     fontSize:14,
-    padding:20,
+    padding:10,
     color:'white',
   },
   sublabel:{
     color:'grey',
-
   },
   label:{
     fontSize:16,
