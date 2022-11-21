@@ -12,6 +12,7 @@ import {
   ScrollView,
   Pressable,
   Button,
+  StatusBar
 } from 'react-native';
 import React, { useState } from 'react';
 import { Label } from 'react-native-form-component';
@@ -27,6 +28,13 @@ const Dashboard = () => {
   // console.log(Profile);
   return (
     <SafeAreaView style={styles.page}>
+      <StatusBar
+        barStyle = "dark-content"  //bisa juga dark-content, light-content and default
+        hidden = {false} //To hide statusBar
+        backgroundColor = "#0087ff" //Background color of statusBar
+        translucent = {false} //allowing light, but not detailed shapes
+        networkActivityIndicatorVisible = {true}
+        />
       <ScrollView style={styles.scrollView}>
         <View style={styles.blue}>
           <Text style={styles.userName}>Hi, {Profile.nama} </Text>
