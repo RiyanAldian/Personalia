@@ -99,7 +99,7 @@ export class Cuti extends Component {
     render() {
       const { modalVisible } = this.state;
       const state = this.states;
-      console.log(this.state)
+      // console.log(this.state)
     return (
       <View style={styles.container}>
         <Modal

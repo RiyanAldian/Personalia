@@ -24,7 +24,7 @@ const Dashboard = () => {
     'nama' : 'Riyan Aldiansyah',
     'nik' : '2022020001',
   };
-  console.log(Profile);
+  // console.log(Profile);
   return (
     <SafeAreaView style={styles.page}>
       <ScrollView style={styles.scrollView}>
