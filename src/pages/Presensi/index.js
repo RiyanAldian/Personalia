@@ -38,7 +38,7 @@ const Presensi = () => {
       </View>
       <View style={styles.container}>
         <View style={styles.title}>
-          <Text style={styles.label}>s</Text>
+          <Text style={styles.label}></Text>
           <Text style={styles.sublabel}>{Profile.nama}</Text>
           <Text style={styles.sublabel}>{Profile.nik}</Text>
         </View>
