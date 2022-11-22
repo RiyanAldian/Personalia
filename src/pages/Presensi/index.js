@@ -17,9 +17,7 @@ import {
 import React, { useState } from 'react';
 import { Label } from 'react-native-form-component';
 import Images from '../../assets';
-import component, { Biodata, Cuti } from '../../components';
-import Today from '../../components/Today';
-
+import component, { Biodata, Cuti, DatePresensi } from '../../components';
 const Presensi = () => {
   const Profile = {
     'nama' : 'Riyan Aldiansyah',
@@ -44,19 +42,14 @@ const Presensi = () => {
           <Text style={styles.label}>Presensi</Text>
         </View>
       </View>
-      <View style={styles.container}>
-        <View style={styles.title}>
-          <Text style={styles.label}></Text>
-          <Text style={styles.sublabel}>{Profile.nama}</Text>
-          <Text style={styles.sublabel}>{Profile.nik}</Text>
-        </View>
-      </View>
+      <DatePresensi/>
     </ScrollView>
 </SafeAreaView>
   );
 };
 
 export default Presensi;
+
 const styles = StyleSheet.create({
   page:{
     color:'#f3efed',
@@ -88,6 +81,7 @@ const styles = StyleSheet.create({
     marginLeft:10,
     marginRight:10,
     marginTop:0,
+    marginBottom:20,
   },
   title:{
     position:'relative',

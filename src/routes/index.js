@@ -49,7 +49,8 @@ const Routes = () => {
             headerShown:false,
         }}>
         <Stack.Screen name="Login" component={Login}
-         options={{ headerShown: false }}/>
+         options={{ headerShown: false }}
+         />
         <Stack.Screen name="MainApp" component={MyDrawer}
           options={{ headerShown: false }} />
         </Stack.Navigator>

@@ -3,5 +3,6 @@ import BottomNavigator from './BottomNavigator';
 import Biodata from './Biodata';
 import Cuti from './Cuti';
 import CustomSidebarMenu from './CustomSidebar';
+import DatePresensi from './DatePresensi';
 
-export {BottomNavigator,Biodata,Cuti,CustomSidebarMenu};
+export {BottomNavigator,Biodata,Cuti,CustomSidebarMenu,DatePresensi};
