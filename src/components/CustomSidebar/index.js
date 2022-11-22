@@ -20,6 +20,21 @@ import {
 import Images from '../../assets';
 
 const CustomSidebarMenu = props => {
+  // const login = () => {
+  //   var {dispatch, navigate} = this.props.navigation;
+  //   const reset = NavigationActions.reset({
+  //   index:0,
+  //   key:null,
+  //   actions:[
+  //   NavigationActions.navigate({
+  //   routeName:'SignedOut'
+  //   })
+  //   ]
+  //   });
+  //   dispatch(reset);
+  //   }
+  // };
+  
   return (
     <SafeAreaView style={{flex: 1}}>
       {/*Top Large Image */}
@@ -30,8 +45,7 @@ const CustomSidebarMenu = props => {
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
-          label="Log Out"
-          onPress={() => Linking.openURL('https://aboutreact.com/')}
+          label="Logout" onPress={() => props.navigation.navigate("Login")}
         />
         <View style={styles.customItem}>
           <Text

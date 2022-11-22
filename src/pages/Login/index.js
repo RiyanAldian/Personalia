@@ -48,7 +48,7 @@ export default Login;
 const styles = StyleSheet.create({
     page: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#f3efed',
     },
     container: {
       flex: 1,

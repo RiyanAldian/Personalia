@@ -13,6 +13,7 @@ const Drawer = createDrawerNavigator();
 
 
 function MyDrawer() {
+  
   return (
     <Drawer.Navigator useLegacyImplementation
       screenOptions={{
@@ -28,7 +29,7 @@ function MyDrawer() {
       }}
       drawerContent={(props) => <CustomSidebarMenu {...props} />}>
       <Drawer.Screen name="Dashboard" component={MainApp} options={{ drawerLabel: 'Home' }}/>
-      <Drawer.Screen name="Presensi" component={Presensi} />
+      <Drawer.Screen name="Presensi" component={Presensi}  />
     </Drawer.Navigator>
   );
 }
