@@ -6,7 +6,7 @@ export default function ShowPresensi() {
   return (
     <View style={styles.container}>
         <View style={styles.row}>
-            <Text>jndej</Text>
+            <Text>RR</Text>
         </View>
     </View>
   );
