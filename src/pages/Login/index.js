@@ -23,7 +23,6 @@ const Login = ({navigation}) => {
       <View style={styles.rec}/>
       <View style={styles.container}>
         <Image source={Images.Logo} style={styles.Image} />
-        
         <Text style={styles.title}>Profil Karyawan</Text>
         <TextInput
           placeholder="Nomor Induk Karyawan"
@@ -35,7 +34,6 @@ const Login = ({navigation}) => {
           style={styles.passwordInput}
         />
         <View style={styles.breakLine} />
-        
         <TouchableOpacity style={styles.button} onPress={login} >
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>

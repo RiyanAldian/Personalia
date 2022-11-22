@@ -17,7 +17,7 @@ import {
 import React, { useState } from 'react';
 import { Label } from 'react-native-form-component';
 import Images from '../../assets';
-import component, { Biodata, Cuti, DatePresensi } from '../../components';
+import component, { Biodata, Cuti, DatePresensi,ShowPresensi } from '../../components';
 const Presensi = () => {
   const Profile = {
     'nama' : 'Riyan Aldiansyah',
@@ -43,6 +43,7 @@ const Presensi = () => {
         </View>
       </View>
       <DatePresensi/>
+      <ShowPresensi/>
     </ScrollView>
 </SafeAreaView>
   );

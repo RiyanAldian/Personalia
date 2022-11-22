@@ -1,10 +1,15 @@
+/* eslint-disable no-alert */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import {Text, StyleSheet, View,Pressable} from 'react-native';
 import React, {Component} from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 
+
 export default class DatePresensi extends Component {
+    _onPressButton() {
+        alert('You tapped the button!');
+      }
   render() {
     const month = [];
     for (let i = 1; i <= 12; i++){
@@ -31,6 +36,10 @@ export default class DatePresensi extends Component {
                         data={month}
                         onSelect={(selectedItem, index) => {
                             console.log(selectedItem, index);
+                        }}
+                        dropdownStyle={{
+                            borderRadius:100 / 5,
+                            backgroundColor:'#fff',
                         }}
                         buttonTextAfterSelection={(selectedItem, index) => {
                             // text represented after item is selected
@@ -61,6 +70,10 @@ export default class DatePresensi extends Component {
                     onSelect={(selectedItem, index) => {
                         console.log(selectedItem, index);
                     }}
+                    dropdownStyle={{
+                        borderRadius:100 / 5,
+                        backgroundColor:'#fff',
+                    }}
                     buttonTextAfterSelection={(selectedItem, index) => {
                         // text represented after item is selected
                         // if data array is an array of objects then return selectedItem.property to render after item is selected
@@ -75,12 +88,13 @@ export default class DatePresensi extends Component {
           </View>
           <View style={{flex:3,flexDirection:'row',justifyContent:'space-between',paddingLeft:10}}>
           <Pressable
-            style={[styles.button]}
-                    >
+            style={[styles.button]} 
+            onPress={this._onPressButton}>
             <Text style={styles.textStyle}>Detail</Text>
             </Pressable>
           </View>
         </View>
+
       </View>
     );
   }
