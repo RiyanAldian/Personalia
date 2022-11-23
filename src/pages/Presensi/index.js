@@ -30,7 +30,7 @@ const Presensi = () => {
       <View style={styles.circ}/>
       <View style={styles.container1}>
         <View style={styles.title}>
-          <Text style={styles.label}>Presensi</Text>
+          <Text style={styles.label}>Presensi Bulanan</Text>
         </View>
       </View>
       <DatePresensi/>

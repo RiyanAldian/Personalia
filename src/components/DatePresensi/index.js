@@ -2,7 +2,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import {Text, StyleSheet, View,Pressable,Button} from 'react-native';
+import {Text, StyleSheet, View,Pressable,Button,Alert} from 'react-native';
 import React, {Component,useState } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import { ShowPresensi } from '../ShowPresensi';
@@ -22,7 +22,7 @@ export default class DatePresensi extends Component {
       }
       toggleStatus(){
         if (this.state.ypick === 0 || this.state.mpick === 0){
-            alert('Pilih Bulan dan tahun terlebih dahulu');
+            Alert.alert('Peringatan','Pilih Bulan dan tahun terlebih dahulu');
         } else {
             this.setState({
                 status:!this.state.status,
