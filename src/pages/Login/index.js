@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
       borderColor: '#717976',
     },
     circ:{
-      backgroundColor:'#9be0fb',
+      backgroundColor:'#c8e1ff',
       width:'200%',
       position:'absolute',
       alignSelf:'center',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
       borderRadius:800,
     },
     rec:{
-      backgroundColor:'#9be0fb',
+      backgroundColor:'#c8e1ff',
       width:'140%',
       position:'absolute',
       alignSelf:'center',
