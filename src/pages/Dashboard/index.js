@@ -4,20 +4,11 @@ import {
   Text,
   View,
   SafeAreaView,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  Modal,
-  Alert,
   ScrollView,
-  Pressable,
-  Button,
   StatusBar
 } from 'react-native';
 import React, { useState } from 'react';
-import { Label } from 'react-native-form-component';
-import Images from '../../assets';
-import component, { Biodata, Cuti } from '../../components';
+import { Biodata, Cuti } from '../../components';
 import Today from '../../components/Today';
 
 const Dashboard = () => {

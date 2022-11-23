@@ -1,15 +1,14 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import { StyleSheet,
     Text,
     View,
-    SafeAreaView,
     Image,
     Modal,
     Alert,
-    Pressable,
-    Button} from 'react-native';
-import React, { useState,Component } from 'react';
+    Pressable} from 'react-native';
+import React, { Component } from 'react';
 import Images from '../../assets';
 import { Table ,TableWrapper,Col,Rows} from 'react-native-table-component';
 
@@ -53,7 +52,7 @@ export class Cuti extends Component {
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
+            Alert.alert('Modal has been closed.');
             this.setModalVisible(!modalVisible);
           }}
         >
@@ -80,7 +79,7 @@ export class Cuti extends Component {
                     </TableWrapper>
                   </Table>
                 </View>
-                <View style={styles.btn}>
+                <View>
                   <Pressable
                     style={[styles.button, styles.buttonOpen]}
                     onPress={() => this.setModalVisible(true)}
@@ -149,7 +148,7 @@ const styles = StyleSheet.create({
       },
       button: {
         borderRadius: 20,
-        padding: 5,
+        padding: 10,
         marginTop:10,
       },
       button1: {

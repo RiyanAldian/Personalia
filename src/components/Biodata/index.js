@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
-import {StyleSheet, Text, View,ScrollView} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React,{ Component } from 'react';
-import { Table ,TableWrapper,Col,Rows,} from 'react-native-table-component';
+import { Table ,TableWrapper,Rows} from 'react-native-table-component';
 
 
 export class Biodata extends Component {

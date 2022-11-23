@@ -7,8 +7,7 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
-    Alert,
-    StatusBar
+    StatusBar,
   } from 'react-native';
 import React, {useState, Component, useEffect}  from 'react';
 import Images from '../../assets';

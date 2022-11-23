@@ -9,7 +9,6 @@ export class Today extends Component {
         <View style={styles.title}>
           <Text style={styles.label}>Hari ini</Text>
         <View style={styles.breakLine} />
-
           <View style={styles.detail}>
             <View style={styles.ket}>
               <Text style={styles.ket}>Masuk</Text>
@@ -49,11 +48,17 @@ const styles = StyleSheet.create({
     },
     ket:{
         color:'grey',
-        paddingRight:2,
-    }, 
+        paddingRight:30,
+    },
     breakLine: {
       backgroundColor: '#F2F2F2',
       marginVertical: 8,
       height: 1,
+    },
+    detail:{
+      flex:1,
+      flexDirection:'row',
+      alignSelf:'flex-start',
+      justifyContent:'space-around',
     },
 });
