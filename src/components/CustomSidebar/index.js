@@ -42,6 +42,7 @@ const CustomSidebarMenu = props => {
         source={Images.Logo}
         style={styles.sideMenuProfileIcon}
       />
+      <Text style={{color:'black',textAlign:'center',fontWeight:'600'}}>KGI PROFILE KARYAWAN</Text>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
