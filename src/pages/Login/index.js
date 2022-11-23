@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     Image,
     Alert,
+    StatusBar
   } from 'react-native';
 import React, {useState, Component, useEffect}  from 'react';
 import Images from '../../assets';
@@ -19,6 +20,13 @@ const Login = ({navigation}) => {
       };
   return (
     <SafeAreaView style={styles.page}>
+        <StatusBar
+        barStyle = "dark-content"  //bisa juga dark-content, light-content and default
+        hidden = {false} //To hide statusBar
+        backgroundColor = "#f3efed" //Background color of statusBar
+        translucent = {false} //allowing light, but not detailed shapes
+        networkActivityIndicatorVisible = {true}
+        />
       <View style={styles.circ}/>
       <View style={styles.rec}/>
       <View style={styles.container}>
@@ -74,9 +82,9 @@ const styles = StyleSheet.create({
       borderRadius: 8,
       paddingHorizontal: 16,
       paddingVertical: 13,
-      borderWidth: 1,
       marginBottom: 16,
-      borderColor: '#0087ff',
+      borderWidth: 1,
+      borderColor: '#717976',
     },
     passwordInput: {
       backgroundColor: '#717976',
@@ -85,7 +93,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: 16,
       paddingVertical: 13,
       borderWidth: 1,
-      borderColor: '#0087ff',
+      borderColor: '#717976',
     },
     circ:{
       backgroundColor:'#9be0fb',
