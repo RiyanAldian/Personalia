@@ -18,22 +18,19 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import Images from '../../assets';
+import {useDispatch} from 'react-redux';
+import {removeValue} from '../../localStorage';
 
 const CustomSidebarMenu = props => {
-  // const login = () => {
-  //   var {dispatch, navigate} = this.props.navigation;
-  //   const reset = NavigationActions.reset({
-  //   index:0,
-  //   key:null,
-  //   actions:[
-  //   NavigationActions.navigate({
-  //   routeName:'SignedOut'
-  //   })
-  //   ]
-  //   });
-  //   dispatch(reset);
-  //   }
-  // };
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch({
+      type: 'SET_LOGOUT',
+    });
+    removeValue('user');
+    props.navigation.navigate("Login");
+  };
+
 
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -46,7 +43,7 @@ const CustomSidebarMenu = props => {
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
-          label="Logout" onPress={() => props.navigation.navigate("Login")}
+          label="Logout" onPress={() =>logout()}
         />
         <View style={styles.customItem}>
           <Text

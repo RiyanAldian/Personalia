@@ -7,8 +7,8 @@ import {
   ScrollView,
   StatusBar,
 } from 'react-native';
-import React, { useState } from 'react';
-import {  DatePresensi,ShowPresensi } from '../../components';
+import React from 'react';
+import {  DatePresensi } from '../../components';
 const Presensi = () => {
   const Profile = {
     'nama' : 'Riyan Aldiansyah',

@@ -9,14 +9,55 @@ import {
     Image,
     StatusBar,
   } from 'react-native';
-import React, {useState, Component, useEffect}  from 'react';
+import React, {useState, useEffect}  from 'react';
+import axios from 'axios';
+import {useDispatch} from 'react-redux';
 import Images from '../../assets';
-
+import {storeData, getData} from '../../localStorage';
 
 const Login = ({navigation}) => {
-    const login = () => {
+  const [email,setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const login = () => {
+    axios
+      .post('http://192.168.20.43:1000/Personalia/ControlKaryawan/users',JSON.stringify({
+        email: email,
+        password: password,
+      }))
+      .then(response => {
+        let res = response.data;
+        dispatch({
+          type: 'SET_LOGIN',
+          value: {email: res.email, password: res.password},
+        });
+        storeData('user', {email: res.email, password: res.password});
+        // navigation.replace('MainApp');
+        if (res.status === true){
+          navigation.replace('MainApp');
+        } else {
+          console.log(res);
+          alert('Gagal Login');
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        alert(error.message);
+      });
+  };
+
+  useEffect(() => {
+    getData('user').then(res => {
+      if (res !== null) {
+        dispatch({
+          type: 'SET_LOGIN',
+          value: res,
+        });
         navigation.replace('MainApp');
-      };
+      }
+    });
+  }, []);
+
   return (
     <SafeAreaView style={styles.page}>
         <StatusBar
@@ -34,11 +75,15 @@ const Login = ({navigation}) => {
         <TextInput
           placeholder="Nomor Induk Karyawan"
           style={styles.emailInput}
+          value={email}
+          onChangeText={setEmail}
         />
         <TextInput
           placeholder="Password"
           secureTextEntry
           style={styles.passwordInput}
+          onChangeText={setPassword}
+          value={password}
         />
         <View style={styles.breakLine} />
         <TouchableOpacity style={styles.button} onPress={login} >

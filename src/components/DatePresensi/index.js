@@ -2,11 +2,10 @@
 /* eslint-disable no-alert */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import {Text, StyleSheet, View,Pressable,Button,Alert} from 'react-native';
-import React, {Component,useState } from 'react';
+import { StyleSheet, View,Button,Alert} from 'react-native';
+import React, {Component } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import { ShowPresensi } from '../ShowPresensi';
-import { State } from 'react-native-gesture-handler';
 
 
 export default class DatePresensi extends Component {

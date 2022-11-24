@@ -5,9 +5,9 @@ import {
   View,
   SafeAreaView,
   ScrollView,
-  StatusBar
+  StatusBar,
 } from 'react-native';
-import React, { useState } from 'react';
+import React from 'react';
 import { Biodata, Cuti } from '../../components';
 import Today from '../../components/Today';
 
@@ -16,7 +16,6 @@ const Dashboard = () => {
     'nama' : 'Riyan Aldiansyah',
     'nik' : '2022020001',
   };
-  // console.log(Profile);
   return (
     <SafeAreaView style={styles.page}>
       <StatusBar

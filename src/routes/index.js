@@ -6,14 +6,11 @@ import * as React from 'react';
 import { Login,Dashboard,Presensi } from '../pages';
 import {CustomSidebarMenu} from '../components';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { View, Text ,Image,TouchableOpacity} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-
 function MyDrawer() {
-  
   return (
     <Drawer.Navigator useLegacyImplementation
       screenOptions={{
