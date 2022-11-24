@@ -34,7 +34,7 @@ const CustomSidebarMenu = props => {
   //   dispatch(reset);
   //   }
   // };
-  
+
   return (
     <SafeAreaView style={{flex: 1}}>
       {/*Top Large Image */}
