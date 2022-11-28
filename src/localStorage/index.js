@@ -25,3 +25,14 @@ export const removeValue = async key => {
     // remove error
   }
 };
+
+export const readData = async () => {
+  try {
+    const value = await AsyncStorage.getItem(STORAGE_KEY);
+    if (value !== null) {
+      setInput(value);
+    }
+  } catch (e) {
+    alert('Failed to fetch the input from storage');
+  }
+};

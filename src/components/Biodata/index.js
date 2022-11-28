@@ -2,39 +2,56 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React,{ Component } from 'react';
 import { Table ,TableWrapper,Rows} from 'react-native-table-component';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
 export class Biodata extends Component {
 
     constructor(props) {
-        const bio = {
-          'KTP' : '3311071006990004',
-          'BPJS' : '0002167007804',
-          'JHT' : '22020956482',
-          'Alamat' : 'Dk Dari Rt 002 Rw 004 Rejosari Polokarto Sukoharjo 087736026',
-          'Tanggal_in' : '02 Feb 2022',
-          'Bagian' : 'Office',
-          'Status' : 'Junior Staff',
-          'Dept' : 'IT',
-        };
-        // console.log(bio);
         super(props);
         this.state = {
-          tableData: [
-            ['KTP', bio.KTP],
-            ['BPJS', bio.BPJS],
-            ['JHT', bio.JHT],
-            ['Alamat', bio.Alamat],
-            ['Tanggal Masuk', bio.Tanggal_in ],
-            ['Bagian', bio.Bagian],
-            ['Status', bio.Status],
-            ['Dept', bio.Dept],
-          ],
+          email: '',
+          tableData:[]
         };
-      }
+
+        AsyncStorage.getItem('user', (error, result) => {
+            if (result) {
+                let resultParsed = JSON.parse(result);
+                this.setState({
+                    email: resultParsed.email,
+                });
+            }
+        });
+    }
 
   render() {
     const state = this.state;
+    const bio = () => {
+      if (state.email !== ''){
+        axios
+        .post('http://192.168.20.43:1000/Personalia/ControlKaryawan/dataKaryawan',JSON.stringify({
+          email: state.email,
+        }))
+        .then(response => {
+          let res = response.data;
+          this.setState({
+            tableData: [ ['KTP', res.ktp],
+            ['BPJS', res.bpjs],
+            ['JHT', res.idno],
+            ['Alamat', res.alamat],
+            ['Tanggal Masuk', res.tgl_masuk],
+            ['Bagian', res.bagian],
+            ['Status', res.jobtitle],
+            ['Dept', res.sname]],
+          });
+        })
+        .catch(function (error) {
+          // handle error
+          alert(error.message);
+        });
+      }
+    };
+    bio();
     return (
         <View style={styles.container}>
             <View style={styles.title}>

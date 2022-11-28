@@ -36,7 +36,7 @@ const Login = ({navigation}) => {
         if (res.status === true){
           navigation.replace('MainApp');
         } else {
-          console.log(res);
+          // console.log(res);
           alert('Gagal Login');
         }
       })
@@ -54,6 +54,7 @@ const Login = ({navigation}) => {
           value: res,
         });
         navigation.replace('MainApp');
+
       }
     });
   }, []);
