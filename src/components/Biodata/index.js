@@ -6,14 +6,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 export class Biodata extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
           email: '',
           tableData:[]
         };
-
         AsyncStorage.getItem('user', (error, result) => {
             if (result) {
                 let resultParsed = JSON.parse(result);
@@ -35,7 +33,7 @@ export class Biodata extends Component {
         .then(response => {
           let res = response.data;
           this.setState({
-            tableData: [ ['KTP', res.ktp],
+            tableData: [['KTP', res.ktp],
             ['BPJS', res.bpjs],
             ['JHT', res.idno],
             ['Alamat', res.alamat],
@@ -73,8 +71,6 @@ export class Biodata extends Component {
 }
 
 export default Biodata;
-
-
 
 const styles = StyleSheet.create({
       table: { flex: 1, backgroundColor: '#fff' },
