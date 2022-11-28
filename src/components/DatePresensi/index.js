@@ -27,10 +27,6 @@ export default class DatePresensi extends Component {
                 status:!this.state.status,
             });
         }
-        console.log('toggle button handler: ' + this.state.status );
-        console.log('Bulan: ' + this.state.mpick );
-        console.log('Tahun: ' + this.state.ypick );
-
     }
 
     render() {
@@ -43,7 +39,6 @@ export default class DatePresensi extends Component {
         for (let i = 2017; i <= tahun; i++){
             year.push(i);
         }
-        console.log(this.state.status);
         return (
             <View>
             <View style={styles.container}>

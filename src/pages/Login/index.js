@@ -57,7 +57,7 @@ const Login = ({navigation}) => {
 
       }
     });
-  }, []);
+  }, [dispatch, navigation]);
 
   return (
     <SafeAreaView style={styles.page}>

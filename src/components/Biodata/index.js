@@ -6,21 +6,21 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 export class Biodata extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          email: '',
-          tableData:[]
-        };
-        AsyncStorage.getItem('user', (error, result) => {
-            if (result) {
-                let resultParsed = JSON.parse(result);
-                this.setState({
-                    email: resultParsed.email,
-                });
-            }
-        });
-    }
+  constructor(props) {
+      super(props);
+      this.state = {
+        email: '',
+        tableData:[],
+      };
+      AsyncStorage.getItem('user', (error, result) => {
+          if (result) {
+              let resultParsed = JSON.parse(result);
+              this.setState({
+                  email: resultParsed.email,
+              });
+          }
+      });
+  }
 
   render() {
     const state = this.state;
@@ -32,6 +32,11 @@ export class Biodata extends Component {
         }))
         .then(response => {
           let res = response.data;
+          if (res.bagian === 'FO'){
+            res.bagian = 'Office';
+          } else {
+            res.bagian = 'Produksi';
+          }
           this.setState({
             tableData: [['KTP', res.ktp],
             ['BPJS', res.bpjs],

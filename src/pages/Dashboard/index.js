@@ -11,13 +11,12 @@ import React, {useState,useEffect} from 'react';
 import { Biodata, Cuti } from '../../components';
 import Today from '../../components/Today';
 import axios from 'axios';
-import { getData} from '../../localStorage';
 import {useDispatch} from 'react-redux';
+import {storeData, getData} from '../../localStorage';
 
-const Dashboard = (props) => {
+const Dashboard = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-
   const dispatch = useDispatch();
   useEffect(() => {
     getData('user').then(res => {
@@ -39,7 +38,8 @@ const Dashboard = (props) => {
       }))
       .then(response => {
         let res = response.data;
-        setName(res.names)
+        setName(res.names);
+        storeData('names',res.names);
       })
       .catch(function (error) {
         // handle error
@@ -47,6 +47,17 @@ const Dashboard = (props) => {
       });
   }};
   bio();
+  useEffect(() => {
+    getData('names').then(res => {
+      if (res !== null) {
+        dispatch({
+          type: 'SET_LOGIN',
+          value: res,
+        });
+        setName(res);
+      }
+    });
+  }, [dispatch]);
   const Profile = {
     'nama' : name,
     'nik' : email,
