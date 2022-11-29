@@ -53,8 +53,10 @@ export class Biodata extends Component {
           alert(error.message);
         });
       }
+      
     };
     bio();
+    
     return (
         <View style={styles.container}>
             <View style={styles.title}>

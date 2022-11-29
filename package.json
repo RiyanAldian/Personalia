@@ -29,7 +29,8 @@
     "react-native-select-dropdown": "^3.0.3",
     "react-native-table-component": "sturmenta/react-native-table-component#e1582aaba92b7e070c31c98b116eea9c23e17f6d",
     "react-redux": "^8.0.5",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "safe-decode-uri-component": "^1.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
@@ -40,9 +41,13 @@
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
+    "react-devtools": "^4.27.0",
     "react-test-renderer": "18.1.0"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "overrides": {
+    "got": "^12.1.0"
   }
 }
