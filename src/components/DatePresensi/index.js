@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import { StyleSheet, View,Button,Alert,Text,Pressable} from 'react-native';
+import { StyleSheet, View,Button,Alert} from 'react-native';
 import React, {Component } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import { ShowPresensi } from '../ShowPresensi';

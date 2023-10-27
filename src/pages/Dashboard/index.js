@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React, {useState,useEffect} from 'react';
 import { Biodata, Cuti } from '../../components';
-import Today from '../../components/Today';
+// import Today from '../../components/Today';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {storeData, getData} from '../../localStorage';
@@ -18,7 +18,7 @@ const Dashboard = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [masuk, setMasuk] = useState('');
-  const [[pulang], setPulang] = useState('');
+  // const [[pulang], setPulang] = useState('');
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -81,8 +81,7 @@ const Dashboard = () => {
   const Profile = {
     'nama' : name,
     'nik' : email,
-    'masuk':masuk
-  };
+    'masuk':masuk};
 
   return (
     <SafeAreaView style={styles.page}>
@@ -123,6 +122,7 @@ const Dashboard = () => {
             </View>
             <View style={styles.ket}>
               <Text style={styles.ket}>Pulang</Text>
+              <Text style={styles.ket}>{Profile.masuk}</Text>
             </View>
           </View>
         </View>
@@ -212,5 +212,4 @@ const styles = StyleSheet.create({
     marginLeft:10,
     marginRight:10,
     marginTop:0,
-  }
-});
+  }});
