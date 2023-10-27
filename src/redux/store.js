@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {createStore} from 'redux';
 
 const initialState = {

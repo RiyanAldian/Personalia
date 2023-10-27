@@ -10,6 +10,8 @@ const App = () => {
     <Provider store={store}>
       <Routes/>
     </Provider>
+      // <Routes/>
+
     );
 };
 

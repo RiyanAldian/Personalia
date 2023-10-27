@@ -8,7 +8,8 @@ import {
   StatusBar,
 } from 'react-native';
 import React from 'react';
-import {  DatePresensi } from '../../components';
+import {  DatePresensi} from '../../components/DatePresensi';
+
 const Presensi = () => {
   const Profile = {
     'nama' : 'Riyan Aldiansyah',
@@ -33,7 +34,7 @@ const Presensi = () => {
           <Text style={styles.label}>Presensi Bulanan</Text>
         </View>
       </View>
-      <DatePresensi/>
+        <DatePresensi/>
       {/* <ShowPresensi/> */}
     </ScrollView>
 </SafeAreaView>

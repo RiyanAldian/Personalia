@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-alert */
+/* eslint-disable no-undef */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const storeData = async (key, value) => {

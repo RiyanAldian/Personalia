@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable prettier/prettier */
 import {
     StyleSheet,
@@ -32,7 +33,7 @@ const Login = ({navigation}) => {
           value: {email: res.email, password: res.password},
         });
         storeData('user', {email: res.email, password: res.password});
-        // navigation.replace('MainApp');
+        navigation.replace('MainApp');
         if (res.status === true){
           navigation.replace('MainApp');
         } else {

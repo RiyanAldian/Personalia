@@ -1,14 +1,13 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable no-alert */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import { StyleSheet, View,Button,Alert} from 'react-native';
+import { StyleSheet, View,Button,Alert,Text,Pressable} from 'react-native';
 import React, {Component } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import { ShowPresensi } from '../ShowPresensi';
 
 
-export default class DatePresensi extends Component {
+export class DatePresensi extends Component {
     constructor(props) {
         super(props);
         this.state = {

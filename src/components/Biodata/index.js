@@ -1,4 +1,8 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-alert */
+/* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View} from 'react-native';
 import React,{ Component } from 'react';
 import { Table ,TableWrapper,Rows} from 'react-native-table-component';
@@ -6,8 +10,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 export class Biodata extends Component {
-  constructor(props) {
-      super(props);
+  constructor() {
+      super();
       this.state = {
         email: '',
         tableData:[],
@@ -53,10 +57,10 @@ export class Biodata extends Component {
           alert(error.message);
         });
       }
-      
+
     };
     bio();
-    
+
     return (
         <View style={styles.container}>
             <View style={styles.title}>

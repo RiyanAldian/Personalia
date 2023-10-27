@@ -17,6 +17,9 @@ import {storeData, getData} from '../../localStorage';
 const Dashboard = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [masuk, setMasuk] = useState('');
+  const [[pulang], setPulang] = useState('');
+
   const dispatch = useDispatch();
   useEffect(() => {
     getData('user').then(res => {
@@ -37,9 +40,26 @@ const Dashboard = () => {
         email: email,
       }))
       .then(response => {
+        // console.log(response);
+
         let res = response.data;
         setName(res.names);
         storeData('names',res.names);
+      })
+      .catch(function (error) {
+        // handle error
+        alert(error.message);
+      });
+      axios
+      .post('http://192.168.20.43:1000/Personalia/ControlKaryawan/hari_ini',JSON.stringify({
+        email: email,
+      }))
+      .then(response => {
+        // console.log(response.data);
+
+        let res = response.data;
+        setMasuk(res.masuk);
+        storeData('masuk',res.masuk);
       })
       .catch(function (error) {
         // handle error
@@ -61,6 +81,7 @@ const Dashboard = () => {
   const Profile = {
     'nama' : name,
     'nik' : email,
+    'masuk':masuk
   };
 
   return (
@@ -91,7 +112,21 @@ const Dashboard = () => {
         </View>
         <Biodata/>
         <Cuti/>
-        <Today/>
+        <View style={styles.containerDay}>
+        <View style={styles.title}>
+          <Text style={styles.label}>Hari ini</Text>
+        <View style={styles.breakLine} />
+          <View style={styles.detail}>
+            <View style={styles.ket}>
+              <Text style={styles.ket}>Masuk</Text>
+              <Text style={styles.ket}>{Profile.masuk}</Text>
+            </View>
+            <View style={styles.ket}>
+              <Text style={styles.ket}>Pulang</Text>
+            </View>
+          </View>
+        </View>
+      </View>
       </ScrollView>
   </SafeAreaView>
   );
@@ -172,4 +207,10 @@ const styles = StyleSheet.create({
     position:'absolute',
     margin:16,
   },
+  containerDay:{
+    marginBottom: 50 ,
+    marginLeft:10,
+    marginRight:10,
+    marginTop:0,
+  }
 });
