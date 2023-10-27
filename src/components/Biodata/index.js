@@ -31,7 +31,7 @@ export class Biodata extends Component {
     const bio = () => {
       if (state.email !== ''){
         axios
-        .post('http://192.168.20.43:1000/Personalia/ControlKaryawan/dataKaryawan',JSON.stringify({
+        .post('http://27.123.2.107:1000/Personalia/ControlKaryawan/dataKaryawan',JSON.stringify({
           email: state.email,
         }))
         .then(response => {

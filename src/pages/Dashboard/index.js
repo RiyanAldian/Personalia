@@ -36,7 +36,7 @@ const Dashboard = () => {
   const bio = () => {
     if (email !== ''){
       axios
-      .post('http://192.168.20.43:1000/Personalia/ControlKaryawan/dataKaryawan',JSON.stringify({
+      .post('http://27.123.2.107:1000/Personalia/ControlKaryawan/dataKaryawan',JSON.stringify({
         email: email,
       }))
       .then(response => {
@@ -51,7 +51,7 @@ const Dashboard = () => {
         alert(error.message);
       });
       axios
-      .post('http://192.168.20.43:1000/Personalia/ControlKaryawan/hari_ini',JSON.stringify({
+      .post('http://27.123.2.107:1000/Personalia/ControlKaryawan/hari_ini',JSON.stringify({
         email: email,
       }))
       .then(response => {

@@ -22,7 +22,7 @@ const Login = ({navigation}) => {
   const dispatch = useDispatch();
   const login = () => {
     axios
-      .post('http://192.168.20.43:1000/Personalia/ControlKaryawan/users',JSON.stringify({
+      .post('http://27.123.2.107:1000/Personalia/ControlKaryawan/users',JSON.stringify({
         email: email,
         password: password,
       }))
