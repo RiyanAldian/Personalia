@@ -58,11 +58,11 @@ export class Cuti extends Component {
             }
             this.setState({
               tableData: [
-              ['Masa Kerja', res.Masa_Kerja+' Bulan'],
-              ['Jumlah Cuti', res.jmlCuti+' Hari'],
-              ['Jumlah Pakai Cuti', res.jmlpakai+  ' Hari'],
-              ['Jumlah Cuti Diuangkan',],
-              ['Sisa Cuti', res.jmlCuti-res.jmlpakai+  ' Hari']
+              ['Masa Kerja', res.Masa_Kerja + ' Bulan'],
+              ['Jumlah Cuti', res.jmlCuti + ' Hari'],
+              ['Jumlah Pakai Cuti', res.jmlpakai +  ' Hari'],
+              ['Jumlah Cuti Diuangkan'],
+              ['Sisa Cuti', res.jmlCuti - res.jmlpakai + ' Hari']
             ],
             });
           })

@@ -37,7 +37,6 @@ const Login = ({navigation}) => {
         if (res.status === true){
           navigation.replace('MainApp');
         } else {
-          // console.log(res);
           alert('Gagal Login');
         }
       })
@@ -59,7 +58,6 @@ const Login = ({navigation}) => {
       }
     });
   }, [dispatch, navigation]);
-
   return (
     <SafeAreaView style={styles.page}>
         <StatusBar

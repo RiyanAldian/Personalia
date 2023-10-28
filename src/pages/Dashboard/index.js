@@ -26,6 +26,8 @@ const Dashboard = () => {
           value: res,
         });
         setEmail(res.email);
+        // console.log(res);
+
       }
     });
   }, [dispatch]);
@@ -37,9 +39,8 @@ const Dashboard = () => {
         email: email,
       }))
       .then(response => {
-        // console.log(response);
-
         let res = response.data;
+        // storeData('user', {nama: res.names,});
         setName(res.names);
         storeData('names',res.names);
       })
@@ -64,7 +65,6 @@ const Dashboard = () => {
     'nama' : name,
     'nik' : email,
   };
-
   return (
     <SafeAreaView style={styles.page}>
       <StatusBar

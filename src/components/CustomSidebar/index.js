@@ -28,6 +28,7 @@ const CustomSidebarMenu = props => {
       type: 'SET_LOGOUT',
     });
     removeValue('user');
+    removeValue('names');
     props.navigation.navigate("Login");
   };
 

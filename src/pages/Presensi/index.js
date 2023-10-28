@@ -7,14 +7,30 @@ import {
   ScrollView,
   StatusBar,
 } from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import {  DatePresensi} from '../../components/DatePresensi';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
 const Presensi = () => {
+  const [name, setName] = useState('');
   const Profile = {
-    'nama' : 'Riyan Aldiansyah',
-    'nik' : '2022020001',
+    'nama' : name,
   };
+  const readData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('names');
+      if (value !== null) {
+        let resultParsed = JSON.parse(value);
+        // console.log(resultParsed);
+        setName(resultParsed);
+        // setInput(value);
+      }
+    } catch (e) {
+      alert('Failed to fetch the input from storage');
+    }
+  };
+  readData();
   return (
     <SafeAreaView style={styles.page}>
       <StatusBar
