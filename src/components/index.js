@@ -4,5 +4,6 @@ import Cuti from './Cuti';
 import CustomSidebarMenu from './CustomSidebar';
 import DatePresensi from './DatePresensi';
 import { ShowPresensi } from './ShowPresensi';
+import Today from './Today';
 
-export {Biodata,Cuti,CustomSidebarMenu,DatePresensi,ShowPresensi};
+export {Biodata,Cuti,CustomSidebarMenu,DatePresensi,ShowPresensi,Today};

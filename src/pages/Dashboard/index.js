@@ -8,8 +8,7 @@ import {
   StatusBar,
 } from 'react-native';
 import React, {useState,useEffect} from 'react';
-import { Biodata, Cuti } from '../../components';
-// import Today from '../../components/Today';
+import { Biodata, Cuti, Today } from '../../components';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {storeData, getData} from '../../localStorage';
@@ -17,8 +16,6 @@ import {storeData, getData} from '../../localStorage';
 const Dashboard = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  const [masuk, setMasuk] = useState('');
-  // const [[pulang], setPulang] = useState('');
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -50,21 +47,6 @@ const Dashboard = () => {
         // handle error
         alert(error.message);
       });
-      axios
-      .post('http://27.123.2.107:1000/Personalia/ControlKaryawan/hari_ini',JSON.stringify({
-        email: email,
-      }))
-      .then(response => {
-        // console.log(response.data);
-
-        let res = response.data;
-        setMasuk(res.masuk);
-        storeData('masuk',res.masuk);
-      })
-      .catch(function (error) {
-        // handle error
-        alert(error.message);
-      });
   }};
   bio();
   useEffect(() => {
@@ -81,7 +63,7 @@ const Dashboard = () => {
   const Profile = {
     'nama' : name,
     'nik' : email,
-    'masuk':masuk};
+  };
 
   return (
     <SafeAreaView style={styles.page}>
@@ -111,22 +93,7 @@ const Dashboard = () => {
         </View>
         <Biodata/>
         <Cuti/>
-        <View style={styles.containerDay}>
-        <View style={styles.title}>
-          <Text style={styles.label}>Hari ini</Text>
-        <View style={styles.breakLine} />
-          <View style={styles.detail}>
-            <View style={styles.ket}>
-              <Text style={styles.ket}>Masuk</Text>
-              <Text style={styles.ket}>{Profile.masuk}</Text>
-            </View>
-            <View style={styles.ket}>
-              <Text style={styles.ket}>Pulang</Text>
-              <Text style={styles.ket}>{Profile.masuk}</Text>
-            </View>
-          </View>
-        </View>
-      </View>
+        <Today style={styles.today}/>
       </ScrollView>
   </SafeAreaView>
   );
@@ -207,9 +174,7 @@ const styles = StyleSheet.create({
     position:'absolute',
     margin:16,
   },
-  containerDay:{
-    marginBottom: 50 ,
-    marginLeft:10,
-    marginRight:10,
-    marginTop:0,
-  }});
+  // today:{
+  //   marginBottom:100
+  // }
+  });

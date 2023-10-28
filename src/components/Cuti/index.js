@@ -11,29 +11,27 @@ import { StyleSheet,
 import React, { Component } from 'react';
 import Images from '../../assets';
 import { Table ,TableWrapper,Col,Rows} from 'react-native-table-component';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
 
 export class Cuti extends Component {
-    constructor(props) {
-      const bio = {
-        'work' : 9,
-        'cuti' : 0,
-        'useCuti' : 5,
-        'cutiUang' : '',
-        'sisaCuti' : -5,
-      };
-      // console.log(bio);
-      super(props);
-      this.states = {
+    constructor() {
+      super();
+      this.state = {
+        email: '',
         tableData: [
-          ['Masa Kerja', bio.work + ' Bulan'],
-          ['Jumlah Cuti', bio.cuti + ' Hari'],
-          ['Jumlah Pakai Cuti', bio.useCuti + ' Hari'],
-          ['Jumlah Cuti Diuangkan', bio.cutiUang],
-          ['Sisa Cuti', bio.sisaCuti + ' Hari'],
         ],
       };
+      AsyncStorage.getItem('user', (error, result) => {
+        if (result) {
+            let resultParsed = JSON.parse(result);
+            // console.log(resultParsed);
+            this.setState({
+                email: resultParsed.email,
+            });
+        }
+    });
     }
     state = {
       modalVisible: false,
@@ -43,11 +41,42 @@ export class Cuti extends Component {
     }
     render() {
       const { modalVisible } = this.state;
-      const state = this.states;
-      // console.log(this.state)
+      const state = this.state;
+      const cuti = () => {
+        // console.log(state);
+        if (state.email !== ''){
+          axios
+          .post('http://27.123.2.107:1000/Personalia/ControlKaryawan/dataKaryawan',JSON.stringify({
+            email: state.email,
+          }))
+          .then(response => {
+            let res = response.data;
+            if (res.bagian === 'FO'){
+              res.bagian = 'Office';
+            } else {
+              res.bagian = 'Produksi';
+            }
+            this.setState({
+              tableData: [
+              ['Masa Kerja', res.Masa_Kerja+' Bulan'],
+              ['Jumlah Cuti', res.jmlCuti+' Hari'],
+              ['Jumlah Pakai Cuti', res.jmlpakai+  ' Hari'],
+              ['Jumlah Cuti Diuangkan',],
+              ['Sisa Cuti', res.jmlCuti-res.jmlpakai+  ' Hari']
+            ],
+            });
+          })
+          .catch(function (error) {
+            // handle error
+            alert(error.message);
+          });
+        }
+      };
+      cuti();
+      // console.log(state)
     return (
       <View style={styles.container}>
-        <Modal
+        {/* <Modal
           animationType="slide"
           transparent={true}
           visible={modalVisible}
@@ -55,8 +84,8 @@ export class Cuti extends Component {
             Alert.alert('Modal has been closed.');
             this.setModalVisible(!modalVisible);
           }}
-        >
-          <View style={styles.centeredView}>
+        > */}
+          {/* <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Text style={styles.modalText}>Hello World!</Text>
               <Pressable
@@ -66,8 +95,8 @@ export class Cuti extends Component {
                  <Image source={Images.ICClose}/>
               </Pressable>
             </View>
-          </View>
-        </Modal>
+          </View> */}
+        {/* </Modal> */}
           <View style={styles.title}>
             <Text style={styles.label}>Cuti</Text>
             <View style={styles.breakLine} />
