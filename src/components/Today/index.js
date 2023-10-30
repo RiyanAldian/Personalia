@@ -40,6 +40,7 @@ const Today = () =>  {
       })
       .catch(function (error) {
         // handle error
+        // eslint-disable-next-line no-alert
         alert(error.message);
       });
   }};
@@ -68,7 +69,7 @@ const Today = () =>  {
         </View>
       </View>
     );
-}
+};
 
 export default Today;
 

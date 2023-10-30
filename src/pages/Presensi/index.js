@@ -10,7 +10,7 @@ import {
 import React,{useState} from 'react';
 import {  DatePresensi} from '../../components/DatePresensi';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
+// import axios from 'axios';
 
 const Presensi = () => {
   const [name, setName] = useState('');
@@ -27,6 +27,7 @@ const Presensi = () => {
         // setInput(value);
       }
     } catch (e) {
+      // eslint-disable-next-line no-alert
       alert('Failed to fetch the input from storage');
     }
   };

@@ -6,7 +6,7 @@ import React, {Component } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import { ShowPresensi } from '../ShowPresensi';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
+// import axios from 'axios';
 
 export class DatePresensi extends Component {
     constructor(props) {

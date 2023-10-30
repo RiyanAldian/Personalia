@@ -1,11 +1,8 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-undef */
-/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View} from 'react-native';
 import React,{ Component } from 'react';
 import { Table ,Rows,Row} from 'react-native-table-component';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 // export default function ShowPresensi() {
@@ -48,13 +45,13 @@ export class ShowPresensi extends Component {
                 // this.setState({
                 //     tableData:[],
                 // });
-                if(Object.keys(res).length >0){
+                if (Object.keys(res).length > 0){
                     for (let index = 0; index < Object.keys(res).length; index++) {
                         // const element = array[index];
                         dataP.push([res[index].dd + '/' + res[index].mm + '/' + res[index].yy,res[index].masuk,res[index].pulang,res[index].ket],
                         );
                     }
-                }else{
+                } else {
                     dataP.push(['DATA TIDAK ADA']);
                 }
                 this.setState({
@@ -66,6 +63,7 @@ export class ShowPresensi extends Component {
               })
               .catch(function (error) {
                 // handle error
+                // eslint-disable-next-line no-alert
                 alert(error.message);
               });
             }
