@@ -20,6 +20,8 @@ export class ShowPresensi extends Component {
             tableHead: ['Tanggal', 'Masuk', 'Pulang', 'Status'],
             tableData: [
             ],
+            isLoading: true,
+            isError: false,
         };
       }
 
@@ -43,13 +45,17 @@ export class ShowPresensi extends Component {
                 let res = response.data;
                 // consolers).length);
                 const dataP = [];
-                this.setState({
-                    tableData:[],
-                });
-                for (let index = 0; index < Object.keys(res).length; index++) {
-                    // const element = array[index];
-                    dataP.push([res[index].dd + '/' + res[index].mm + '/' + res[index].yy,res[index].masuk,res[index].pulang,res[index].ket],
-                    );
+                // this.setState({
+                //     tableData:[],
+                // });
+                if(Object.keys(res).length >0){
+                    for (let index = 0; index < Object.keys(res).length; index++) {
+                        // const element = array[index];
+                        dataP.push([res[index].dd + '/' + res[index].mm + '/' + res[index].yy,res[index].masuk,res[index].pulang,res[index].ket],
+                        );
+                    }
+                }else{
+                    dataP.push(['DATA TIDAK ADA']);
                 }
                 this.setState({
                   tableData:dataP,
@@ -65,6 +71,7 @@ export class ShowPresensi extends Component {
             }
           };
           presensi(this.props.empno,this.props.mpick,this.props.ypick);
+          console.log(this.state);
         return (
             <View style={styles.container}>
                 <View style={styles.title}>
