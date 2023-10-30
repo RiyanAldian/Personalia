@@ -5,7 +5,8 @@ import { StyleSheet, View,Button,Alert} from 'react-native';
 import React, {Component } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import { ShowPresensi } from '../ShowPresensi';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
 export class DatePresensi extends Component {
     constructor(props) {
@@ -16,7 +17,16 @@ export class DatePresensi extends Component {
             status: false,
             mpick : 0,
             ypick : 0,
+            email : '',
         };
+        AsyncStorage.getItem('user', (error, result) => {
+            if (result) {
+                let resultParsed = JSON.parse(result);
+                this.setState({
+                    email: resultParsed.email,
+                });
+            }
+        });
       }
       toggleStatus(){
         if (this.state.ypick === 0 || this.state.mpick === 0){
@@ -25,6 +35,7 @@ export class DatePresensi extends Component {
             this.setState({
                 status:!this.state.status,
             });
+            console.log(this.state);
         }
     }
 
@@ -124,7 +135,7 @@ export class DatePresensi extends Component {
                     </View>
                     </View>
                 </View>
-                <View>{this.state.status ? ( <ShowPresensi/>) : false}</View>
+                <View>{this.state.status ? ( <ShowPresensi empno={this.state.email} mpick={this.state.mpick} ypick ={this.state.ypick}/>) : false}</View>
             </View>
         );
     }

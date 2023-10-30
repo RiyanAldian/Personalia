@@ -76,8 +76,6 @@ export class Biodata extends Component {
                 </View>
             </View>
         </View>
-        
-
     );
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 // Custom Navigation Drawer / Sidebar with Image and Icon in Menu Options
 // https://aboutreact.com/custom-navigation-drawer-sidebar-with-image-and-icon-in-menu-options/
@@ -29,7 +30,7 @@ const CustomSidebarMenu = props => {
     });
     removeValue('user');
     removeValue('names');
-    props.navigation.navigate("Login");
+    props.navigation.navigate('Login');
   };
 
 

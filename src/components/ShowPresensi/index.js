@@ -1,7 +1,12 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-undef */
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View} from 'react-native';
 import React,{ Component } from 'react';
 import { Table ,Rows,Row} from 'react-native-table-component';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
 // export default function ShowPresensi() {
 export class ShowPresensi extends Component {
@@ -9,29 +14,57 @@ export class ShowPresensi extends Component {
         // console.log(bio);
         super(props);
         this.state = {
+            empno:'',
+            mm : '',
+            yy : '',
             tableHead: ['Tanggal', 'Masuk', 'Pulang', 'Status'],
             tableData: [
-                ['01/11/2022', '07:20','16:32','Terlambat'],
-                ['02/11/2022', '06:37','14:01','Holiday Working'],
-                ['03/11/2022', '00:00','00:00','Nor Work Day'],
-                ['04/11/2022', '06:20','16:32','Kerja'],
-                ['05/11/2022', '06:20','16:32','Kerja'],
-                ['06/11/2022', '06:20','16:32','Kerja'],
-                ['07/11/2022', '06:20','16:32','Kerja'],
-                ['08/11/2022', '06:20','16:32','Kerja'],
-                ['09/11/2022', '06:20','16:32','Kerja'],
-                ['10/11/2022', '06:20','16:32','Kerja'],
-                ['11/11/2022', '06:20','16:32','Kerja'],
-                ['12/11/2022', '06:20','16:32','Kerja'],
-                ['13/11/2022', '06:20','16:32','Kerja'],
-                ['14/11/2022', '06:20','16:32','Kerja'],
-                ['15/11/2022', '06:20','16:32','Kerja'],
             ],
         };
       }
 
     render() {
         const state = this.state;
+        // console.log(this.state  );
+
+        const presensi = (empno,mpick,ypick ) => {
+            if (  ypick && mpick  ){
+                // console.log(mpick,' ',this.state  );
+                if (mpick < 10){
+                    mpick = '0' + mpick;
+                }
+              axios
+              .post('http://27.123.2.107:1000/Personalia/ControlKaryawan/presensi_m',JSON.stringify({
+                empno: empno,
+                bulan:mpick,
+                tahun: ypick,
+              }))
+              .then(response => {
+                let res = response.data;
+                // consolers).length);
+                const dataP = [];
+                this.setState({
+                    tableData:[],
+                });
+                for (let index = 0; index < Object.keys(res).length; index++) {
+                    // const element = array[index];
+                    dataP.push([res[index].dd + '/' + res[index].mm + '/' + res[index].yy,res[index].masuk,res[index].pulang,res[index].ket],
+                    );
+                }
+                this.setState({
+                  tableData:dataP,
+                  empno:empno,
+                  yy:ypick,
+                  mm:mpick,
+                });
+              })
+              .catch(function (error) {
+                // handle error
+                alert(error.message);
+              });
+            }
+          };
+          presensi(this.props.empno,this.props.mpick,this.props.ypick);
         return (
             <View style={styles.container}>
                 <View style={styles.title}>
